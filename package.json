@@ -1,0 +1,33 @@
+{
+  "name": "dhClient",
+  "version": "1.0.0",
+  "description": "DreamHome Client Service",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "grunt": "~1.0.1",
+    "grunt-cli": "~1.2.0",
+    "grunt-contrib-jshint": "~1.1.0",
+    "grunt-contrib-nodeunit": "~1.0.0",
+    "grunt-contrib-uglify": "~2.0.0",
+    "supertest": "^3.0.0",
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
+    "mocha": "^2.4.5"
+  },
+  "dependencies": {
+    "express": "*",
+    "restler": "*",
+    "body-parser": "*",
+    "request": "*",
+    "mongodb": "*"
+  },
+  "engines": {
+    "node": "0.10.*"
+  },
+  "repository": {},
+  "scripts": {
+    "start": "node dhclient.js",
+    "test": "mocha --timeout 10000"
+  }
+}
