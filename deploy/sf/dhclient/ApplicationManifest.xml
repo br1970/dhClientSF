@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ApplicationManifest ApplicationTypeName="dhMobile" ApplicationTypeVersion="latest" 
-    xmlns="http://schemas.microsoft.com/2011/01/fabric" 
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+<ApplicationManifest ApplicationTypeName="dreamhomesf" ApplicationTypeVersion="latest" 
+    xmlns="http://schemas.microsoft.com/2011/01/fabric"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Parameters>
         <Parameter Name="dhclient_InstanceCount" DefaultValue="2" />
