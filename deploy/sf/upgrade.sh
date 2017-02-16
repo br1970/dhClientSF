@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "PWD IS $PWD"
 [ -z $BUILD_BUILDNUMBER ] && { echo '$BUILDID is undefined, exiting.'; exit 1; }
 echo "Deploying release to dev for Build ID: $BUILD_BUILDNUMBER"
 echo "================================================="
