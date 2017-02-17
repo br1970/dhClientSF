@@ -1,3 +1,4 @@
+
 #!/bin/bash
 wait=0
 while [[ $(azure servicefabric application show --json | jq -r '.items[].status') == "Upgrading" ]]
