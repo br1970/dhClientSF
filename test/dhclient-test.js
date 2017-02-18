@@ -1,3 +1,4 @@
+"use strict";
 let chai = require('chai');
 let chaiHttp = require('chai-http');
 var server = require('../dhclient');
