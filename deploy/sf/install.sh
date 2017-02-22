@@ -5,23 +5,23 @@ echo "================================================="
 echo "Step 1:  Update the manifest versions to: $BUILD_BUILDNUMBER"
 echo "================================================="
 echo "---Updating ApplicationManifest.."
-sed -i "/<ApplicationManifest.*ApplicationTypeVersion/s/ApplicationTypeVersion=\".*\"/ApplicationTypeVersion=\"$BUILD_BUILDNUMBER\"/" dhclient/ApplicationManifest.xml
+sed -i "/<ApplicationManifest.*ApplicationTypeVersion/s/ApplicationTypeVersion=\".*\"/ApplicationTypeVersion=\"$BUILD_BUILDNUMBER\"/" dhClientPkg/ApplicationManifest.xml
 [ $? -eq 0 ] || { echo "Failed to update Application Manifest, Exiting..."; exit 1; }
 echo "---Updating ApplicationManifest Completed"
 echo "---Updating ServiceManifestRef.."
-sed -i "/<ServiceManifestRef.*ServiceManifestVersion/s/ServiceManifestVersion=\".*\"/ServiceManifestVersion=\"$BUILD_BUILDNUMBER\"/" dhclient/ApplicationManifest.xml
+sed -i "/<ServiceManifestRef.*ServiceManifestVersion/s/ServiceManifestVersion=\".*\"/ServiceManifestVersion=\"$BUILD_BUILDNUMBER\"/" dhClientPkg/ApplicationManifest.xml
 [ $? -eq 0 ] || { echo "Failed to update ServiceManifestRef, Exiting..."; exit 1; }
 echo "Updating ServiceManifestRef Completed"
 echo "---Updating ServiceManifest.."
-sed -i "/<ServiceManifest.*Version/s/Version=\".*\"/Version=\"$BUILD_BUILDNUMBER\"/" dhclient/dhClient/ServiceManifest.xml
+sed -i "/<ServiceManifest.*Version/s/Version=\".*\"/Version=\"$BUILD_BUILDNUMBER\"/" dhClientPkg/dhClientPkg/ServiceManifest.xml
 [ $? -eq 0 ] || { echo "Failed to update CodePackage, Exiting..."; exit 1; }
 echo "---Updating ServiceManifest Completed"
 echo "---Updating CodePackage.."
-sed -i "/<CodePackage.*Version/s/Version=\".*\"/Version=\"$BUILD_BUILDNUMBER\"/" dhclient/dhClient/ServiceManifest.xml
+sed -i "/<CodePackage.*Version/s/Version=\".*\"/Version=\"$BUILD_BUILDNUMBER\"/" dhClientPkg/dhClientPkg/ServiceManifest.xml
 [ $? -eq 0 ] || { echo "Failed to update CodePackage, Exiting..."; exit 1; }
 echo "---Updating CodePackage Completed"
 echo "---Updating ImageName.."
-sed -i "s/<ImageName>.*<\/ImageName>/<ImageName>balduino\/dhclientsf:$BUILD_BUILDNUMBER<\/ImageName>/" dhclient/dhClient/ServiceManifest.xml
+sed -i "s/<ImageName>.*<\/ImageName>/<ImageName>balduino\/dhclientsf:$BUILD_BUILDNUMBER<\/ImageName>/" dhClientPkg/dhClientPkg/ServiceManifest.xml
 [ $? -eq 0 ] || { echo "Failed to update ImageName, Exiting..."; exit 1; }
 echo "---Updating ImageName Completed"
 echo "================================================="
