@@ -34,15 +34,15 @@ azure servicefabric cluster connect $SERVICEFABRICCLUSTER
 echo "================================================="
 echo "Step 3:  Copy to ImageStore"
 echo "================================================="
-azure servicefabric application package copy dhclient fabric:ImageStore
+azure servicefabric application package copy dhClientPkg fabric:ImageStore
 [ $? -eq 0 ] || { echo "Failed to copy to ImageStore, Exiting..."; exit 1; }
 echo "================================================="
 echo "Step 4:  Register Application"
 echo "================================================="
-azure servicefabric application type register dhclient
+azure servicefabric application type register dhClientPkg
 [ $? -eq 0 ] || { echo "Failed to register application, Exiting..."; exit 1; }
 echo "================================================="
 echo "Step 5:  Create Application"
 echo "================================================="
-azure servicefabric application create fabric:/dh dhMobile $BUILD_BUILDNUMBER
+azure servicefabric application create fabric:/dh dhMobileType $BUILD_BUILDNUMBER
 [ $? -eq 0 ] || { echo "Failed to create application, Exiting..."; exit 1; }
