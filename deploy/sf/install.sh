@@ -44,5 +44,5 @@ azure servicefabric application type register dhClientPkg
 echo "================================================="
 echo "Step 5:  Create Application"
 echo "================================================="
-azure servicefabric application create fabric:/dh dhMobileType $BUILD_BUILDNUMBER
+azure servicefabric application create fabric:/dhMobile dhMobileType $BUILD_BUILDNUMBER
 [ $? -eq 0 ] || { echo "Failed to create application, Exiting..."; exit 1; }
