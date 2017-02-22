@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ApplicationManifest ApplicationTypeName="dhMobile" ApplicationTypeVersion="latest"
+<ApplicationManifest ApplicationTypeName="dhMobileType" ApplicationTypeVersion="latest"
     xmlns="http://schemas.microsoft.com/2011/01/fabric"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Parameters>
-        <Parameter Name="dhclient_InstanceCount" DefaultValue="2" />
+        <Parameter Name="dhClient_InstanceCount" DefaultValue="2" />
     </Parameters>
     <ServiceManifestImport>
-        <ServiceManifestRef ServiceManifestName="dhClient" ServiceManifestVersion="latest" />
+        <ServiceManifestRef ServiceManifestName="dhClientPkg" ServiceManifestVersion="latest" />
     </ServiceManifestImport>
     <DefaultServices>
         <Service Name="dhClient">
-            <StatelessService ServiceTypeName="dhclientType" InstanceCount="[dhclient_InstanceCount]">
+            <StatelessService ServiceTypeName="dhClientType" InstanceCount="[dhClient_InstanceCount]">
                 <SingletonPartition />
             </StatelessService>
         </Service>
