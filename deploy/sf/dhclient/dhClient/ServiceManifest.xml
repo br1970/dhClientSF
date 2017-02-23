@@ -14,10 +14,10 @@
       </ContainerHost>
     </EntryPoint>
     <EnvironmentVariables></EnvironmentVariables>
-    <Resources>
-      <Endpoints>
-        <Endpoint Name="WebEndpoint" Protocol="http" Port="8081" />
-      </Endpoints>
-    </Resources>
   </CodePackage>
+  <Resources>
+    <Endpoints>
+      <Endpoint Name="WebEndpoint" Protocol="http" Port="8081" />
+    </Endpoints>
+  </Resources>
 </ServiceManifest>
