@@ -1,12 +1,12 @@
 //-----------------------------------------------------------------------------
-// Name:       dhClient Service                                   
-//                                                                              
-// Purpose:    Microservice                                                     
-//                                                                              
-// Interfaces: MongoDB database                                                 
-//                                                                              
-// Author:     Sal Carceller                                                    
-//                                                                              
+// Name:       dhClient Service
+//
+// Purpose:    Microservice
+//
+// Interfaces: MongoDB database
+//
+// Author:     Sal Carceller
+//
 //-----------------------------------------------------------------------------
 var http = require('http');
 var url = require('url');
@@ -17,7 +17,7 @@ var mongoClient = require('mongodb').MongoClient;
 var helper = require('./helpers'); // include helper functions from helpers.js
 
 //-----------------------------------------------------------------------------
-// Set up express                                    
+// Set up express
 var app = express();
 var server = http.createServer(app);
 app.use(express.static(__dirname + '/public'));
@@ -26,10 +26,10 @@ app.use(bodyParser.json()); // for parsing application/json
 
 // what host and port should we listen on?
 //var _host = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';  // host to listen on
-var _port = process.env.OPENSHIFT_NODEJS_PORT || 8081; // port to listen on
+var _port = 8081; // port to listen on
 
 //-----------------------------------------------------------------------------
-// return code definitions, used in json responses {"RC": _rcOK}  
+// return code definitions, used in json responses {"RC": _rcOK}
 var _rcOK = 0;
 var _rcWarning = 1;
 var _rcError = 2;
@@ -41,17 +41,17 @@ var _rcUnknown = 99;
 //-----------------------------------------------------------------------------
 /*
 {
-  // Auto generated fields, when creating a record do not pass these in 
+  // Auto generated fields, when creating a record do not pass these in
   "_id": "mongo generated",
-  "clientId": "auto generated", 
+  "clientId": "auto generated",
 
   // required fields
-  "clientName": 
+  "clientName":
   {
     "clientFN": "Richard",
     "clientLN": "Hendrix"
   },
-  "clientInfo": 
+  "clientInfo":
   {
     "address": "101 Valley Steet",
     "city": "Glendale",
@@ -63,14 +63,14 @@ var _rcUnknown = 99;
 
   // optional fields
   "agentId": 1000,
-  "suggestedProperties": 
+  "suggestedProperties":
   [
     {
       "propertyId": 2000,
       "propertyState": 0,
       "askingPrice": 320000,
       "rating": 0,
-      "comments": 
+      "comments":
       [
         {
           "comment": "This is a beautiful home"
@@ -141,7 +141,7 @@ app.get('/client/:cid', function (req, res) {
 app.get('/clients', function (req, res) {
   //  console.log("app.get(./clients function has been called.");
   helper.dbInit(function (err) {
-    if (!err) { // DB connections have been established. 
+    if (!err) { // DB connections have been established.
       console.log('  ... application has successfully connected to the DB');
       var cref = helper.crefClient();
       var dbQuery = {}; // query used for looking up records in the collection
@@ -232,7 +232,7 @@ app.put('/client', function (req, res) {
   var clientRecord = req.body; // get the request body json data
 
   helper.dbInit(function (err) {
-    if (!err) { // DB connections have been established. 
+    if (!err) { // DB connections have been established.
       console.log('  ... application has successfully connected to the DB');
       _updateClientRecord(clientRecord, function () {
         // send the http response message
@@ -316,7 +316,7 @@ function _addClientRecord(jsonRecord, callback) {
       jsonRecord.clientId = pkId;
       console.log("DEBUG2 - " + JSON.stringify(jsonRecord));
 
-      if (!err) { // pkId generated 
+      if (!err) { // pkId generated
         // add the record to the DB clientCollection
         cref.insertOne(jsonRecord, {
             w: 1,
