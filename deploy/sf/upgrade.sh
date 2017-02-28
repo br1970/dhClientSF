@@ -16,13 +16,19 @@ echo "Updating ServiceManifestRef Completed"
 echo "---Updating ServiceManifest.."
 sed -i "/<ServiceManifest.*Version/s/Version=\".*\"/Version=\"$BUILD_BUILDNUMBER\"/" dhclient/dhClient/ServiceManifest.xml
 [ $? -eq 0 ] || { echo "Failed to update CodePackage, Exiting..."; exit 1; }
+sed -i "/<ServiceManifest.*Version/s/Version=\".*\"/Version=\"$BUILD_BUILDNUMBER\"/" dhclient/dhNotification/ServiceManifest.xml
+[ $? -eq 0 ] || { echo "Failed to update CodePackage, Exiting..."; exit 1; }
 echo "---Updating ServiceManifest Completed"
 echo "---Updating CodePackage.."
 sed -i "/<CodePackage.*Version/s/Version=\".*\"/Version=\"$BUILD_BUILDNUMBER\"/" dhclient/dhClient/ServiceManifest.xml
 [ $? -eq 0 ] || { echo "Failed to update CodePackage, Exiting..."; exit 1; }
+sed -i "/<CodePackage.*Version/s/Version=\".*\"/Version=\"$BUILD_BUILDNUMBER\"/" dhclient/dhNotification/ServiceManifest.xml
+[ $? -eq 0 ] || { echo "Failed to update CodePackage, Exiting..."; exit 1; }
 echo "---Updating CodePackage Completed"
 echo "---Updating ImageName.."
 sed -i "s/<ImageName>.*<\/ImageName>/<ImageName>balduino\/dhclientsf:$BUILD_BUILDNUMBER<\/ImageName>/" dhclient/dhClient/ServiceManifest.xml
+[ $? -eq 0 ] || { echo "Failed to update ImageName, Exiting..."; exit 1; }
+sed -i "s/<ImageName>.*<\/ImageName>/<ImageName>balduino\/dhclientsf:$BUILD_BUILDNUMBER<\/ImageName>/" dhclient/dhNotification/ServiceManifest.xml
 [ $? -eq 0 ] || { echo "Failed to update ImageName, Exiting..."; exit 1; }
 echo "---Updating ImageName Completed"
 echo "================================================="
