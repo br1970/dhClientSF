@@ -4,7 +4,7 @@
   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ServiceTypes>
-    <StatelessServiceType ServiceTypeName="dhclientType" UseImplicitHost="true"></StatelessServiceType>
+    <StatelessServiceType ServiceTypeName="dhclientType" UseImplicitHost="true" ></StatelessServiceType>
   </ServiceTypes>
   <CodePackage Name="code" Version="1.0.0">
     <EntryPoint>
