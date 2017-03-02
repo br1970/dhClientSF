@@ -4,11 +4,8 @@
     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Parameters>
-      <Parameter Name="dhclient_InstanceCount" DefaultValue="2" />
-      <Parameter Name="dhnotification_InstanceCount" DefaultValue="2" />
-      <Parameter Name="MinReplicaSetSize" DefaultValue="1" />
-      <Parameter Name="PartitionCount" DefaultValue="1" />
-      <Parameter Name="TargetReplicaSetSize" DefaultValue="2" />
+      <Parameter Name="dhclient_InstanceCount" DefaultValue="1" />
+      <Parameter Name="dhnotification_InstanceCount" DefaultValue="1" />
     </Parameters>
     <ServiceManifestImport>
         <ServiceManifestRef ServiceManifestName="dhClient" ServiceManifestVersion="1.0.0" />
