@@ -7,7 +7,7 @@ let should = chai.should();
 
 chai.use(chaiHttp);
 
-describe('/GET clients', () => {
+describe('/GET echo', () => {
     it('it should GET an echo', (done) => {
         if (process.env.CLUSTER_URI)
             server = ("http://" + process.env.CLUSTER_URI + ":" + server.port).replace(/\n/, '');
@@ -17,7 +17,7 @@ describe('/GET clients', () => {
             .end((err, res) => {
                 res.should.have.status(200);
                 res.body.should.have.property('RC').and.equal(0);
-                res.body.should.have.property('items').that.is.an('array');
+                res.body.should.have.property('success').that.is.an('array');
                 res.header.should.have.property('content-length').above(0);
                 done();
             });
