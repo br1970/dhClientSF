@@ -8,12 +8,12 @@ let should = chai.should();
 chai.use(chaiHttp);
 
 describe('/GET clients', () => {
-    it('it should GET all the clients', (done) => {
+    it('it should GET an echo', (done) => {
         if (process.env.CLUSTER_URI)
             server = ("http://" + process.env.CLUSTER_URI + ":" + server.port).replace(/\n/, '');
         console.log("server is: " + server);
         chai.request(server)
-            .get('/clients')
+            .get('/echo')
             .end((err, res) => {
                 res.should.have.status(200);
                 res.body.should.have.property('RC').and.equal(0);
